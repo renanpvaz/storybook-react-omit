@@ -10,9 +10,9 @@ Install it using yarn or npm
 yarn add storybook-react-omit
 ```
 
-then add its parameters
+Add its parameters
 
-```diff
+```js
 // .storybook/config.js
 
 import { configure, addDecorator, addParameters } from '@storybook/react'
@@ -20,7 +20,26 @@ import { withInfo } from '@storybook/addon-info'
 import { withOmission } from 'storybook-react-omit'
 
 addDecorator(withInfo({ header: false, inline: true }))
-+ addParameters(withOmission())
+addParameters(withOmission()) // ← add this line
+```
+
+Then call `omit` passing any valid JSX
+
+```js
+import omit from 'storybook-react-omit'
 
 // ...
+
+.add('My story', () => (
+  <MyComponent>
+    This will be shown in the source
+    {omit(
+      <script>
+        {`
+            while(true) alert("but this won't")
+        `}
+      </script>
+    )}
+  </MyComponent>
+))
 ```

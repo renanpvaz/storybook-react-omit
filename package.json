@@ -1,0 +1,34 @@
+{
+  "name": "storybook-omit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "deploy": "storybook-to-ghpages"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Renan Vaz",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-info": "^5.0.10",
+    "@storybook/addons": "^5.0.10",
+    "@storybook/addon-actions": "^5.0.10",
+    "@storybook/addon-links": "^5.0.10",
+    "@storybook/react": "^5.0.10",
+    "babel-loader": "^8.0.5"
+  },
+  "dependencies": {}
+}

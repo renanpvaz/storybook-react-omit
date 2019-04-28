@@ -51,22 +51,19 @@ storiesOf('Example', module)
     return (
       <Card>
         <h2>Here's another one</h2>
-        <p>
-          I'll omit some source here too
-          {omit(
-            <>
-              , but instead of showing "..." we can make it display something
-              else.
-              <br />
-              <br />
-              <small>
-                Note that if you go to the previous example, it'll show the same
-                name ("source omitted") because <code>setDisplayName</code> is
-                global.
-              </small>
-            </>,
-          )}
-        </p>
+        {omit(
+          <p>
+            I'll omit some source here too, but instead of showing "..." we can
+            make it display something else.
+            <br />
+            <br />
+            <small>
+              Note that if you go to the previous example, it'll show the same
+              name ("source omitted") because <code>setDisplayName</code> is
+              global.
+            </small>
+          </p>,
+        )}
       </Card>
     )
   })

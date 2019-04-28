@@ -6,10 +6,9 @@ addDecorator(
   withInfo({
     header: false,
     inline: true,
+    propTablesExclude: withOmission([]),
   }),
 )
-
-addParameters(withOmission())
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /\.stories\.js$/)

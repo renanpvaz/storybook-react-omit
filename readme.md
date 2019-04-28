@@ -20,8 +20,13 @@ import { configure, addDecorator, addParameters } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { withOmission } from 'storybook-react-omit'
 
-addDecorator(withInfo({ header: false, inline: true }))
-addParameters(withOmission()) // ← add this line
+addDecorator(
+  withInfo({
+    header: false,
+    inline: true,
+    propTablesExclude: withOmission([]), // ← add this line
+  }),
+)
 ```
 
 Then call `omit` passing any valid JSX

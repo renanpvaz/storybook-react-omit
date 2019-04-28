@@ -11,6 +11,6 @@ export const withOmission = () => ({
 })
 export const setDisplayName = name => (Omitted.displayName = name)
 
-const omit = omitted => <Omitted _={omitted} /> // addon-info ignores props that start with "_"
+const omit = omitted => React.createElement(Omitted, { _: omitted }) // addon-info ignores props that start with "_"
 
 export default omit
